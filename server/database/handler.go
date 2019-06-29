@@ -3,8 +3,8 @@ package database
 import (
 	"fmt"
 
-	"github.com/paws/database/mongo"
-	models "github.com/paws/model"
+	"github.com/paws/server/database/mongo"
+	models "github.com/paws/server/model"
 )
 
 // Handler ...

@@ -4,7 +4,7 @@ import (
 	"errors"
 	"fmt"
 
-	models "github.com/paws/model"
+	models "github.com/paws/server/model"
 	"gopkg.in/mgo.v2"
 )
 

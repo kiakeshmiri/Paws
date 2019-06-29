@@ -9,8 +9,8 @@ import (
 	"time"
 
 	timestamp "github.com/golang/protobuf/ptypes/timestamp"
-	"github.com/paws/database"
-	models "github.com/paws/model"
+	"github.com/paws/server/database"
+	models "github.com/paws/server/model"
 	"google.golang.org/grpc"
 	"gopkg.in/mgo.v2/bson"
 )

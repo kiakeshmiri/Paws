@@ -4,7 +4,7 @@ import (
 	"log"
 
 	"github.com/jinzhu/configor"
-	models "github.com/paws/model"
+	models "github.com/paws/server/model"
 	"github.com/paws/server"
 )
 
