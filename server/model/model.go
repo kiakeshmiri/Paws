@@ -23,5 +23,5 @@ type Diary struct {
 	ID    bson.ObjectId `json:"id" bson:"_id,omitempty"`
 	Image string        `json:"image"`
 	Note  string        `json:"note"`
-	Date  string        `json:"date"`
+	DiaryDate  string   `json:"date"`
 }

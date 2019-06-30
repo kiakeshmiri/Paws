@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package paws.grpc;
+package pawsgrpc;
 
 service Paws {
   rpc CreateDiary (Diary) returns (ResultCode) {}

@@ -7,7 +7,7 @@
  */
 // GENERATED CODE -- DO NOT EDIT!
 
-goog.provide('proto.paws.grpc.Diary');
+goog.provide('proto.pawsgrpc.Diary');
 
 goog.require('jspb.BinaryReader');
 goog.require('jspb.BinaryWriter');
@@ -24,12 +24,12 @@ goog.require('jspb.Message');
  * @extends {jspb.Message}
  * @constructor
  */
-proto.paws.grpc.Diary = function(opt_data) {
+proto.pawsgrpc.Diary = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.paws.grpc.Diary, jspb.Message);
+goog.inherits(proto.pawsgrpc.Diary, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
-  proto.paws.grpc.Diary.displayName = 'proto.paws.grpc.Diary';
+  proto.pawsgrpc.Diary.displayName = 'proto.pawsgrpc.Diary';
 }
 
 
@@ -44,8 +44,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     for transitional soy proto support: http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.paws.grpc.Diary.prototype.toObject = function(opt_includeInstance) {
-  return proto.paws.grpc.Diary.toObject(opt_includeInstance, this);
+proto.pawsgrpc.Diary.prototype.toObject = function(opt_includeInstance) {
+  return proto.pawsgrpc.Diary.toObject(opt_includeInstance, this);
 };
 
 
@@ -54,11 +54,11 @@ proto.paws.grpc.Diary.prototype.toObject = function(opt_includeInstance) {
  * @param {boolean|undefined} includeInstance Whether to include the JSPB
  *     instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.paws.grpc.Diary} msg The msg instance to transform.
+ * @param {!proto.pawsgrpc.Diary} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.paws.grpc.Diary.toObject = function(includeInstance, msg) {
+proto.pawsgrpc.Diary.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     image: jspb.Message.getFieldWithDefault(msg, 2, ""),
@@ -77,23 +77,23 @@ proto.paws.grpc.Diary.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.paws.grpc.Diary}
+ * @return {!proto.pawsgrpc.Diary}
  */
-proto.paws.grpc.Diary.deserializeBinary = function(bytes) {
+proto.pawsgrpc.Diary.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.paws.grpc.Diary;
-  return proto.paws.grpc.Diary.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.pawsgrpc.Diary;
+  return proto.pawsgrpc.Diary.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.paws.grpc.Diary} msg The message object to deserialize into.
+ * @param {!proto.pawsgrpc.Diary} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.paws.grpc.Diary}
+ * @return {!proto.pawsgrpc.Diary}
  */
-proto.paws.grpc.Diary.deserializeBinaryFromReader = function(msg, reader) {
+proto.pawsgrpc.Diary.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -129,9 +129,9 @@ proto.paws.grpc.Diary.deserializeBinaryFromReader = function(msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.paws.grpc.Diary.prototype.serializeBinary = function() {
+proto.pawsgrpc.Diary.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.paws.grpc.Diary.serializeBinaryToWriter(this, writer);
+  proto.pawsgrpc.Diary.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -139,11 +139,11 @@ proto.paws.grpc.Diary.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.paws.grpc.Diary} message
+ * @param {!proto.pawsgrpc.Diary} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.paws.grpc.Diary.serializeBinaryToWriter = function(message, writer) {
+proto.pawsgrpc.Diary.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getId();
   if (f.length > 0) {
@@ -180,13 +180,13 @@ proto.paws.grpc.Diary.serializeBinaryToWriter = function(message, writer) {
  * optional string id = 1;
  * @return {string}
  */
-proto.paws.grpc.Diary.prototype.getId = function() {
+proto.pawsgrpc.Diary.prototype.getId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
 };
 
 
 /** @param {string} value */
-proto.paws.grpc.Diary.prototype.setId = function(value) {
+proto.pawsgrpc.Diary.prototype.setId = function(value) {
   jspb.Message.setProto3StringField(this, 1, value);
 };
 
@@ -195,13 +195,13 @@ proto.paws.grpc.Diary.prototype.setId = function(value) {
  * optional string image = 2;
  * @return {string}
  */
-proto.paws.grpc.Diary.prototype.getImage = function() {
+proto.pawsgrpc.Diary.prototype.getImage = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
 
 /** @param {string} value */
-proto.paws.grpc.Diary.prototype.setImage = function(value) {
+proto.pawsgrpc.Diary.prototype.setImage = function(value) {
   jspb.Message.setProto3StringField(this, 2, value);
 };
 
@@ -210,13 +210,13 @@ proto.paws.grpc.Diary.prototype.setImage = function(value) {
  * optional string note = 3;
  * @return {string}
  */
-proto.paws.grpc.Diary.prototype.getNote = function() {
+proto.pawsgrpc.Diary.prototype.getNote = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
 
 /** @param {string} value */
-proto.paws.grpc.Diary.prototype.setNote = function(value) {
+proto.pawsgrpc.Diary.prototype.setNote = function(value) {
   jspb.Message.setProto3StringField(this, 3, value);
 };
 
@@ -225,13 +225,13 @@ proto.paws.grpc.Diary.prototype.setNote = function(value) {
  * optional string date = 4;
  * @return {string}
  */
-proto.paws.grpc.Diary.prototype.getDate = function() {
+proto.pawsgrpc.Diary.prototype.getDate = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
 /** @param {string} value */
-proto.paws.grpc.Diary.prototype.setDate = function(value) {
+proto.pawsgrpc.Diary.prototype.setDate = function(value) {
   jspb.Message.setProto3StringField(this, 4, value);
 };
 

@@ -6,9 +6,6 @@ import (
 	"fmt"
 	"log"
 	"net"
-	"time"
-
-	timestamp "github.com/golang/protobuf/ptypes/timestamp"
 	"github.com/paws/server/database"
 	models "github.com/paws/server/model"
 	"google.golang.org/grpc"
@@ -69,10 +66,10 @@ func (srv *Runner) FetchAllDiaries(ctx context.Context, req *FetchParam) (*Diary
 // CreateDiary - Creates a new Diary object
 func (srv *Runner) CreateDiary(ctx context.Context, diary *Diary) (*ResultCode, error) {
 	dbdiary := &models.Diary{
-		ID:    bson.NewObjectId(),
-		Image: diary.GetImage(),
-		Note:  diary.GetNote(),
-		Date:  diary.GetDate().String(),
+		ID:    		bson.NewObjectId(),
+		Image: 		diary.GetImage(),
+		Note:  		diary.GetNote(),
+		DiaryDate:  diary.GetDate(),
 	}
 
 	if len(diary.Note) == 0 {
@@ -90,7 +87,7 @@ func (srv *Runner) mapDiaries(diaries ...models.Diary) []*Diary {
 
 		grpcDiaries = append(grpcDiaries, &Diary{
 			Id:    diary.ID.Hex(),
-			Date:  diary.Date,
+			Date:  diary.DiaryDate,
 			Image: diary.Image,
 			Note:  diary.Note,
 		})

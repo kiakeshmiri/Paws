@@ -1,5 +1,5 @@
 /**
- * @fileoverview gRPC-Web generated client stub for paws.grpc
+ * @fileoverview gRPC-Web generated client stub for pawsgrpc
  * @enhanceable
  * @public
  */
@@ -48,7 +48,7 @@ export class PawsClient {
                response: ResultCode) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/paws.grpc.Paws/CreateDiary',
+        '/pawsgrpc.Paws/CreateDiary',
       request,
       metadata || {},
       this.methodInfoCreateDiary,
@@ -70,7 +70,7 @@ export class PawsClient {
                response: DiaryList) => void) {
     return this.client_.rpcCall(
       this.hostname_ +
-        '/paws.grpc.Paws/FetchAllDiaries',
+        '/pawsgrpc.Paws/FetchAllDiaries',
       request,
       metadata || {},
       this.methodInfoFetchAllDiaries,

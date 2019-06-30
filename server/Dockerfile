@@ -14,7 +14,7 @@ COPY ./server ${PROJECT_SRC}
 
 WORKDIR ${PROJECT_SRC}
 
-RUN go mod init github.com/paws/server
+# RUN go mod init github.com/paws/server
 
 RUN go build 
 

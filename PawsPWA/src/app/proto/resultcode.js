@@ -7,7 +7,7 @@
  */
 // GENERATED CODE -- DO NOT EDIT!
 
-goog.provide('proto.paws.grpc.ResultCode');
+goog.provide('proto.pawsgrpc.ResultCode');
 
 goog.require('jspb.BinaryReader');
 goog.require('jspb.BinaryWriter');
@@ -24,12 +24,12 @@ goog.require('jspb.Message');
  * @extends {jspb.Message}
  * @constructor
  */
-proto.paws.grpc.ResultCode = function(opt_data) {
+proto.pawsgrpc.ResultCode = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.paws.grpc.ResultCode, jspb.Message);
+goog.inherits(proto.pawsgrpc.ResultCode, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
-  proto.paws.grpc.ResultCode.displayName = 'proto.paws.grpc.ResultCode';
+  proto.pawsgrpc.ResultCode.displayName = 'proto.pawsgrpc.ResultCode';
 }
 
 
@@ -44,8 +44,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     for transitional soy proto support: http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.paws.grpc.ResultCode.prototype.toObject = function(opt_includeInstance) {
-  return proto.paws.grpc.ResultCode.toObject(opt_includeInstance, this);
+proto.pawsgrpc.ResultCode.prototype.toObject = function(opt_includeInstance) {
+  return proto.pawsgrpc.ResultCode.toObject(opt_includeInstance, this);
 };
 
 
@@ -54,11 +54,11 @@ proto.paws.grpc.ResultCode.prototype.toObject = function(opt_includeInstance) {
  * @param {boolean|undefined} includeInstance Whether to include the JSPB
  *     instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.paws.grpc.ResultCode} msg The msg instance to transform.
+ * @param {!proto.pawsgrpc.ResultCode} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.paws.grpc.ResultCode.toObject = function(includeInstance, msg) {
+proto.pawsgrpc.ResultCode.toObject = function(includeInstance, msg) {
   var f, obj = {
     code: jspb.Message.getFieldWithDefault(msg, 1, 0)
   };
@@ -74,23 +74,23 @@ proto.paws.grpc.ResultCode.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.paws.grpc.ResultCode}
+ * @return {!proto.pawsgrpc.ResultCode}
  */
-proto.paws.grpc.ResultCode.deserializeBinary = function(bytes) {
+proto.pawsgrpc.ResultCode.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.paws.grpc.ResultCode;
-  return proto.paws.grpc.ResultCode.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.pawsgrpc.ResultCode;
+  return proto.pawsgrpc.ResultCode.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.paws.grpc.ResultCode} msg The message object to deserialize into.
+ * @param {!proto.pawsgrpc.ResultCode} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.paws.grpc.ResultCode}
+ * @return {!proto.pawsgrpc.ResultCode}
  */
-proto.paws.grpc.ResultCode.deserializeBinaryFromReader = function(msg, reader) {
+proto.pawsgrpc.ResultCode.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -114,9 +114,9 @@ proto.paws.grpc.ResultCode.deserializeBinaryFromReader = function(msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.paws.grpc.ResultCode.prototype.serializeBinary = function() {
+proto.pawsgrpc.ResultCode.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.paws.grpc.ResultCode.serializeBinaryToWriter(this, writer);
+  proto.pawsgrpc.ResultCode.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -124,11 +124,11 @@ proto.paws.grpc.ResultCode.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.paws.grpc.ResultCode} message
+ * @param {!proto.pawsgrpc.ResultCode} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.paws.grpc.ResultCode.serializeBinaryToWriter = function(message, writer) {
+proto.pawsgrpc.ResultCode.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getCode();
   if (f !== 0) {
@@ -144,13 +144,13 @@ proto.paws.grpc.ResultCode.serializeBinaryToWriter = function(message, writer) {
  * optional int32 code = 1;
  * @return {number}
  */
-proto.paws.grpc.ResultCode.prototype.getCode = function() {
+proto.pawsgrpc.ResultCode.prototype.getCode = function() {
   return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
 };
 
 
 /** @param {number} value */
-proto.paws.grpc.ResultCode.prototype.setCode = function(value) {
+proto.pawsgrpc.ResultCode.prototype.setCode = function(value) {
   jspb.Message.setProto3IntField(this, 1, value);
 };
 

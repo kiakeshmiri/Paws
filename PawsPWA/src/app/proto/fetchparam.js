@@ -7,7 +7,7 @@
  */
 // GENERATED CODE -- DO NOT EDIT!
 
-goog.provide('proto.paws.grpc.FetchParam');
+goog.provide('proto.pawsgrpc.FetchParam');
 
 goog.require('jspb.BinaryReader');
 goog.require('jspb.BinaryWriter');
@@ -24,12 +24,12 @@ goog.require('jspb.Message');
  * @extends {jspb.Message}
  * @constructor
  */
-proto.paws.grpc.FetchParam = function(opt_data) {
+proto.pawsgrpc.FetchParam = function(opt_data) {
   jspb.Message.initialize(this, opt_data, 0, -1, null, null);
 };
-goog.inherits(proto.paws.grpc.FetchParam, jspb.Message);
+goog.inherits(proto.pawsgrpc.FetchParam, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
-  proto.paws.grpc.FetchParam.displayName = 'proto.paws.grpc.FetchParam';
+  proto.pawsgrpc.FetchParam.displayName = 'proto.pawsgrpc.FetchParam';
 }
 
 
@@ -44,8 +44,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     for transitional soy proto support: http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.paws.grpc.FetchParam.prototype.toObject = function(opt_includeInstance) {
-  return proto.paws.grpc.FetchParam.toObject(opt_includeInstance, this);
+proto.pawsgrpc.FetchParam.prototype.toObject = function(opt_includeInstance) {
+  return proto.pawsgrpc.FetchParam.toObject(opt_includeInstance, this);
 };
 
 
@@ -54,11 +54,11 @@ proto.paws.grpc.FetchParam.prototype.toObject = function(opt_includeInstance) {
  * @param {boolean|undefined} includeInstance Whether to include the JSPB
  *     instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.paws.grpc.FetchParam} msg The msg instance to transform.
+ * @param {!proto.pawsgrpc.FetchParam} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.paws.grpc.FetchParam.toObject = function(includeInstance, msg) {
+proto.pawsgrpc.FetchParam.toObject = function(includeInstance, msg) {
   var f, obj = {
 
   };
@@ -74,23 +74,23 @@ proto.paws.grpc.FetchParam.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.paws.grpc.FetchParam}
+ * @return {!proto.pawsgrpc.FetchParam}
  */
-proto.paws.grpc.FetchParam.deserializeBinary = function(bytes) {
+proto.pawsgrpc.FetchParam.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.paws.grpc.FetchParam;
-  return proto.paws.grpc.FetchParam.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.pawsgrpc.FetchParam;
+  return proto.pawsgrpc.FetchParam.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.paws.grpc.FetchParam} msg The message object to deserialize into.
+ * @param {!proto.pawsgrpc.FetchParam} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.paws.grpc.FetchParam}
+ * @return {!proto.pawsgrpc.FetchParam}
  */
-proto.paws.grpc.FetchParam.deserializeBinaryFromReader = function(msg, reader) {
+proto.pawsgrpc.FetchParam.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -110,9 +110,9 @@ proto.paws.grpc.FetchParam.deserializeBinaryFromReader = function(msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.paws.grpc.FetchParam.prototype.serializeBinary = function() {
+proto.pawsgrpc.FetchParam.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.paws.grpc.FetchParam.serializeBinaryToWriter(this, writer);
+  proto.pawsgrpc.FetchParam.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -120,11 +120,11 @@ proto.paws.grpc.FetchParam.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.paws.grpc.FetchParam} message
+ * @param {!proto.pawsgrpc.FetchParam} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.paws.grpc.FetchParam.serializeBinaryToWriter = function(message, writer) {
+proto.pawsgrpc.FetchParam.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
 };
 

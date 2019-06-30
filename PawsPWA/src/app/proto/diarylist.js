@@ -7,12 +7,12 @@
  */
 // GENERATED CODE -- DO NOT EDIT!
 
-goog.provide('proto.paws.grpc.DiaryList');
+goog.provide('proto.pawsgrpc.DiaryList');
 
 goog.require('jspb.BinaryReader');
 goog.require('jspb.BinaryWriter');
 goog.require('jspb.Message');
-goog.require('proto.paws.grpc.Diary');
+goog.require('proto.pawsgrpc.Diary');
 
 
 /**
@@ -25,19 +25,19 @@ goog.require('proto.paws.grpc.Diary');
  * @extends {jspb.Message}
  * @constructor
  */
-proto.paws.grpc.DiaryList = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, proto.paws.grpc.DiaryList.repeatedFields_, null);
+proto.pawsgrpc.DiaryList = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.pawsgrpc.DiaryList.repeatedFields_, null);
 };
-goog.inherits(proto.paws.grpc.DiaryList, jspb.Message);
+goog.inherits(proto.pawsgrpc.DiaryList, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
-  proto.paws.grpc.DiaryList.displayName = 'proto.paws.grpc.DiaryList';
+  proto.pawsgrpc.DiaryList.displayName = 'proto.pawsgrpc.DiaryList';
 }
 /**
  * List of repeated fields within this message type.
  * @private {!Array<number>}
  * @const
  */
-proto.paws.grpc.DiaryList.repeatedFields_ = [1];
+proto.pawsgrpc.DiaryList.repeatedFields_ = [1];
 
 
 
@@ -52,8 +52,8 @@ if (jspb.Message.GENERATE_TO_OBJECT) {
  *     for transitional soy proto support: http://goto/soy-param-migration
  * @return {!Object}
  */
-proto.paws.grpc.DiaryList.prototype.toObject = function(opt_includeInstance) {
-  return proto.paws.grpc.DiaryList.toObject(opt_includeInstance, this);
+proto.pawsgrpc.DiaryList.prototype.toObject = function(opt_includeInstance) {
+  return proto.pawsgrpc.DiaryList.toObject(opt_includeInstance, this);
 };
 
 
@@ -62,14 +62,14 @@ proto.paws.grpc.DiaryList.prototype.toObject = function(opt_includeInstance) {
  * @param {boolean|undefined} includeInstance Whether to include the JSPB
  *     instance for transitional soy proto support:
  *     http://goto/soy-param-migration
- * @param {!proto.paws.grpc.DiaryList} msg The msg instance to transform.
+ * @param {!proto.pawsgrpc.DiaryList} msg The msg instance to transform.
  * @return {!Object}
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.paws.grpc.DiaryList.toObject = function(includeInstance, msg) {
+proto.pawsgrpc.DiaryList.toObject = function(includeInstance, msg) {
   var f, obj = {
     diariesList: jspb.Message.toObjectList(msg.getDiariesList(),
-    proto.paws.grpc.Diary.toObject, includeInstance)
+    proto.pawsgrpc.Diary.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -83,23 +83,23 @@ proto.paws.grpc.DiaryList.toObject = function(includeInstance, msg) {
 /**
  * Deserializes binary data (in protobuf wire format).
  * @param {jspb.ByteSource} bytes The bytes to deserialize.
- * @return {!proto.paws.grpc.DiaryList}
+ * @return {!proto.pawsgrpc.DiaryList}
  */
-proto.paws.grpc.DiaryList.deserializeBinary = function(bytes) {
+proto.pawsgrpc.DiaryList.deserializeBinary = function(bytes) {
   var reader = new jspb.BinaryReader(bytes);
-  var msg = new proto.paws.grpc.DiaryList;
-  return proto.paws.grpc.DiaryList.deserializeBinaryFromReader(msg, reader);
+  var msg = new proto.pawsgrpc.DiaryList;
+  return proto.pawsgrpc.DiaryList.deserializeBinaryFromReader(msg, reader);
 };
 
 
 /**
  * Deserializes binary data (in protobuf wire format) from the
  * given reader into the given message object.
- * @param {!proto.paws.grpc.DiaryList} msg The message object to deserialize into.
+ * @param {!proto.pawsgrpc.DiaryList} msg The message object to deserialize into.
  * @param {!jspb.BinaryReader} reader The BinaryReader to use.
- * @return {!proto.paws.grpc.DiaryList}
+ * @return {!proto.pawsgrpc.DiaryList}
  */
-proto.paws.grpc.DiaryList.deserializeBinaryFromReader = function(msg, reader) {
+proto.pawsgrpc.DiaryList.deserializeBinaryFromReader = function(msg, reader) {
   while (reader.nextField()) {
     if (reader.isEndGroup()) {
       break;
@@ -107,8 +107,8 @@ proto.paws.grpc.DiaryList.deserializeBinaryFromReader = function(msg, reader) {
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new proto.paws.grpc.Diary;
-      reader.readMessage(value,proto.paws.grpc.Diary.deserializeBinaryFromReader);
+      var value = new proto.pawsgrpc.Diary;
+      reader.readMessage(value,proto.pawsgrpc.Diary.deserializeBinaryFromReader);
       msg.addDiaries(value);
       break;
     default:
@@ -124,9 +124,9 @@ proto.paws.grpc.DiaryList.deserializeBinaryFromReader = function(msg, reader) {
  * Serializes the message to binary data (in protobuf wire format).
  * @return {!Uint8Array}
  */
-proto.paws.grpc.DiaryList.prototype.serializeBinary = function() {
+proto.pawsgrpc.DiaryList.prototype.serializeBinary = function() {
   var writer = new jspb.BinaryWriter();
-  proto.paws.grpc.DiaryList.serializeBinaryToWriter(this, writer);
+  proto.pawsgrpc.DiaryList.serializeBinaryToWriter(this, writer);
   return writer.getResultBuffer();
 };
 
@@ -134,18 +134,18 @@ proto.paws.grpc.DiaryList.prototype.serializeBinary = function() {
 /**
  * Serializes the given message to binary data (in protobuf wire
  * format), writing to the given BinaryWriter.
- * @param {!proto.paws.grpc.DiaryList} message
+ * @param {!proto.pawsgrpc.DiaryList} message
  * @param {!jspb.BinaryWriter} writer
  * @suppress {unusedLocalVariables} f is only used for nested messages
  */
-proto.paws.grpc.DiaryList.serializeBinaryToWriter = function(message, writer) {
+proto.pawsgrpc.DiaryList.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getDiariesList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
       1,
       f,
-      proto.paws.grpc.Diary.serializeBinaryToWriter
+      proto.pawsgrpc.Diary.serializeBinaryToWriter
     );
   }
 };
@@ -153,31 +153,31 @@ proto.paws.grpc.DiaryList.serializeBinaryToWriter = function(message, writer) {
 
 /**
  * repeated Diary diaries = 1;
- * @return {!Array<!proto.paws.grpc.Diary>}
+ * @return {!Array<!proto.pawsgrpc.Diary>}
  */
-proto.paws.grpc.DiaryList.prototype.getDiariesList = function() {
-  return /** @type{!Array<!proto.paws.grpc.Diary>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.paws.grpc.Diary, 1));
+proto.pawsgrpc.DiaryList.prototype.getDiariesList = function() {
+  return /** @type{!Array<!proto.pawsgrpc.Diary>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.pawsgrpc.Diary, 1));
 };
 
 
-/** @param {!Array<!proto.paws.grpc.Diary>} value */
-proto.paws.grpc.DiaryList.prototype.setDiariesList = function(value) {
+/** @param {!Array<!proto.pawsgrpc.Diary>} value */
+proto.pawsgrpc.DiaryList.prototype.setDiariesList = function(value) {
   jspb.Message.setRepeatedWrapperField(this, 1, value);
 };
 
 
 /**
- * @param {!proto.paws.grpc.Diary=} opt_value
+ * @param {!proto.pawsgrpc.Diary=} opt_value
  * @param {number=} opt_index
- * @return {!proto.paws.grpc.Diary}
+ * @return {!proto.pawsgrpc.Diary}
  */
-proto.paws.grpc.DiaryList.prototype.addDiaries = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.paws.grpc.Diary, opt_index);
+proto.pawsgrpc.DiaryList.prototype.addDiaries = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.pawsgrpc.Diary, opt_index);
 };
 
 
-proto.paws.grpc.DiaryList.prototype.clearDiariesList = function() {
+proto.pawsgrpc.DiaryList.prototype.clearDiariesList = function() {
   this.setDiariesList([]);
 };
 
