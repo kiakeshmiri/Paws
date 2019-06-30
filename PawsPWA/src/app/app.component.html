@@ -12,13 +12,13 @@
               Written On:
             </mat-panel-title>
             <mat-panel-description>
-              {{diary.date}}
+              {{diary.date.toString()}}
             </mat-panel-description>
           </mat-expansion-panel-header>
 
           <img [src]="diary.image" id="catimage">
           <div>
-            {{diary.getNote()}}
+            {{diary.note}}
           </div>
         </mat-expansion-panel>
       </mat-accordion>

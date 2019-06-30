@@ -1,9 +1,0 @@
-server:
-    type: grpc
-    host: ''
-    port: 9090
-
-database:
-    type: mongo
-    host: mongodb
-    port: 27017

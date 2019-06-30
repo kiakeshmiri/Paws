@@ -87,16 +87,10 @@ func (srv *Runner) CreateDiary(ctx context.Context, diary *Diary) (*ResultCode, 
 func (srv *Runner) mapDiaries(diaries ...models.Diary) []*Diary {
 	grpcDiaries := []*Diary{}
 	for _, diary := range diaries {
-		time, _ := time.Parse(time.RFC3339, diary.Date)
-
-		s := int64(time.Second())     // from 'int'
-		n := int32(time.Nanosecond()) // from 'int'
-
-		ts := &timestamp.Timestamp{Seconds: s, Nanos: n}
 
 		grpcDiaries = append(grpcDiaries, &Diary{
 			Id:    diary.ID.Hex(),
-			Date:  ts,
+			Date:  diary.Date,
 			Image: diary.Image,
 			Note:  diary.Note,
 		})

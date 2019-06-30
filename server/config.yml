@@ -5,5 +5,5 @@ server:
 
 database:
     type: mongo
-    host: mongodb
+    host: pawsmongodb
     port: 27017

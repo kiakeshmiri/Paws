@@ -1,8 +1,8 @@
 version: '3'
 services: 
-  mongodb:
+  pawsmongodb:
     image: mongo:latest
-    container_name: "mongodb"
+    container_name: "pawsmongodb"
     environment:
       - MONGO_DATA_DIR=/var/lib/mongodb
       - MONGO_LOG_DIR=/var/log/mongodb
@@ -11,6 +11,11 @@ services:
     ports:
        - 27017:27017
     command: mongod --smallfiles --logpath=/var/log/mongodb/mongodb.log # --quiet
+  
+  mongo-seed:
+    build: ./mongo-seed
+    links:
+      - pawsmongodb
 
   pawsserver:
     container_name: "pawsserver"
@@ -21,9 +26,9 @@ services:
     ports:
       - "9090:9090"
     links:
-      - mongodb
+      - pawsmongodb
     depends_on:
-      - mongodb
+      - pawsmongodb
   envoy:
     build:
       context: ./

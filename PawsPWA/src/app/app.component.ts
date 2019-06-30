@@ -17,12 +17,8 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    //this.diaries$ = this.pawsService.getDiaries();
+    this.diaries$ = this.pawsService.diarySubject;
 
-    this.pawsService.getDiaries().subscribe((d) => {console.log(d);});
-    // this.pawsService.getDiaries().subscribe((d) => {
-    //   console.log('subscribed!');
-    //   console.log(d.length);
-    // });
+    this.pawsService.getDiaries();
   }
 }

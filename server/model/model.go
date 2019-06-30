@@ -18,14 +18,6 @@ type Config struct {
 	}
 }
 
-// Todo ...
-type Todo struct {
-	ID       bson.ObjectId `bson:"_id"`
-	Title    string        `bson:"title"`
-	Tag      string        `bson:"tag"`
-	Priority int32         `bson:"priority"`
-}
-
 // Diary ...
 type Diary struct {
 	ID    bson.ObjectId `json:"id" bson:"_id,omitempty"`

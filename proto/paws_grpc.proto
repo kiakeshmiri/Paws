@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package paws.grpc;
+
+service Paws {
+  rpc CreateDiary (Diary) returns (ResultCode) {}
+
+  rpc FetchAllDiaries (FetchParam) returns (DiaryList) {}
+}
+
+message Diary {
+  string id = 1;
+	string image = 2;
+	string note = 3;
+	string date = 4;
+}
+
+// The response message containing the greetings
+message DiaryList {
+  repeated Diary diaries = 1;
+}
+
+message FetchParam {
+
+}
+
+message ResultCode {
+    int32 code = 1;
+}

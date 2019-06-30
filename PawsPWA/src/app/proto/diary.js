@@ -12,7 +12,6 @@ goog.provide('proto.paws.grpc.Diary');
 goog.require('jspb.BinaryReader');
 goog.require('jspb.BinaryWriter');
 goog.require('jspb.Message');
-goog.require('proto.google.protobuf.Timestamp');
 
 
 /**
@@ -64,7 +63,7 @@ proto.paws.grpc.Diary.toObject = function(includeInstance, msg) {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     image: jspb.Message.getFieldWithDefault(msg, 2, ""),
     note: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    date: (f = msg.getDate()) && proto.google.protobuf.Timestamp.toObject(includeInstance, f)
+    date: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -114,8 +113,7 @@ proto.paws.grpc.Diary.deserializeBinaryFromReader = function(msg, reader) {
       msg.setNote(value);
       break;
     case 4:
-      var value = new proto.google.protobuf.Timestamp;
-      reader.readMessage(value,proto.google.protobuf.Timestamp.deserializeBinaryFromReader);
+      var value = /** @type {string} */ (reader.readString());
       msg.setDate(value);
       break;
     default:
@@ -169,11 +167,10 @@ proto.paws.grpc.Diary.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getDate();
-  if (f != null) {
-    writer.writeMessage(
+  if (f.length > 0) {
+    writer.writeString(
       4,
-      f,
-      proto.google.protobuf.Timestamp.serializeBinaryToWriter
+      f
     );
   }
 };
@@ -225,32 +222,17 @@ proto.paws.grpc.Diary.prototype.setNote = function(value) {
 
 
 /**
- * optional google.protobuf.Timestamp date = 4;
- * @return {?proto.google.protobuf.Timestamp}
+ * optional string date = 4;
+ * @return {string}
  */
 proto.paws.grpc.Diary.prototype.getDate = function() {
-  return /** @type{?proto.google.protobuf.Timestamp} */ (
-    jspb.Message.getWrapperField(this, proto.google.protobuf.Timestamp, 4));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
 
-/** @param {?proto.google.protobuf.Timestamp|undefined} value */
+/** @param {string} value */
 proto.paws.grpc.Diary.prototype.setDate = function(value) {
-  jspb.Message.setWrapperField(this, 4, value);
-};
-
-
-proto.paws.grpc.Diary.prototype.clearDate = function() {
-  this.setDate(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {!boolean}
- */
-proto.paws.grpc.Diary.prototype.hasDate = function() {
-  return jspb.Message.getField(this, 4) != null;
+  jspb.Message.setProto3StringField(this, 4, value);
 };
 
 

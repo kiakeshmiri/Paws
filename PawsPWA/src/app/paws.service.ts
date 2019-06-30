@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of, Subject } from 'rxjs';
+import { tap } from 'rxjs/operators';
 import { NetworkstatusService } from './networkstatus.service';
 import Dexie from 'dexie';
 import { PawsClient } from './proto/Paws_grpcServiceClientPb';
@@ -14,7 +15,7 @@ export class PawsService {
 
   private pawsdb: any;
   private isOnline = true;
-  private diarySubject = new Subject<Diary.AsObject[]>();
+  diarySubject = new Subject<Diary.AsObject[]>();
 
   constructor(private http: HttpClient, private networkstatusService: NetworkstatusService) {
     this.registerToEvents(networkstatusService);
@@ -72,7 +73,7 @@ export class PawsService {
     });
   }
 
-  getDiaries(): Observable<Diary.AsObject[]> {
+  getDiaries() {
     if (!this.isOnline) {
       const allItems = this.pawsdb.diaries;
       const diariesInIndexedDB: Diary.AsObject[] = [];
@@ -97,10 +98,7 @@ export class PawsService {
           });
 
           this.diarySubject.next(diaries);
-          //this.storeInIndexedDB(diaries);
-          this.diarySubject.asObservable().subscribe((d) => { console.log(d); }
-          );
-          return this.diarySubject.asObservable();
+          return this.diarySubject;
         });
     }
 

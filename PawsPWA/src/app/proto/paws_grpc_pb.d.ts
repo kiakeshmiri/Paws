@@ -1,7 +1,5 @@
 import * as jspb from "google-protobuf"
 
-import * as google_protobuf_timestamp_pb from 'google-protobuf/google/protobuf/timestamp_pb';
-
 export class Diary extends jspb.Message {
   getId(): string;
   setId(value: string): void;
@@ -12,10 +10,8 @@ export class Diary extends jspb.Message {
   getNote(): string;
   setNote(value: string): void;
 
-  getDate(): google_protobuf_timestamp_pb.Timestamp | undefined;
-  setDate(value?: google_protobuf_timestamp_pb.Timestamp): void;
-  hasDate(): boolean;
-  clearDate(): void;
+  getDate(): string;
+  setDate(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Diary.AsObject;
@@ -30,7 +26,7 @@ export namespace Diary {
     id: string,
     image: string,
     note: string,
-    date?: google_protobuf_timestamp_pb.Timestamp.AsObject,
+    date: string,
   }
 }
 
