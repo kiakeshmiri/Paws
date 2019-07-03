@@ -7,7 +7,7 @@ import (
 
 func main() {
 
-    http.Handle("/", http.FileServer(http.Dir("./static")))
+    http.Handle("/", http.FileServer(http.Dir("./public")))
 
     log.Fatal(http.ListenAndServe(":8081", nil))
 }
