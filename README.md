@@ -4,13 +4,14 @@ This demo explains how to develop a Progressive Web App consuming grpc services.
 
 It's based on grpc-web on backend exposing CRUD services using golang and mongodb. All the components of this demo are located in docker container and are managed by docker compose.
 
-By using grpc and protobuf the size of transfered data will be 20 times smaller and almost 10 times faster (based on my own benchmarks) compared to traditional REST. 
+By using grpc and protobuf the size of transferred data will be 20 times smaller and almost 10 times faster (based on my own benchmarks) compared to traditional REST.
 
 ## Server(less) backend:
 
-GRPC nackend is written in go (golang). The code is located under server folder. Dependencies are handled by go modules and it used standard mongodb driver to communicate to database and exposes servies through google grpc and protobuf.
+gRPC backend is written in go (golang). The code is located under server folder. Dependencies are handled by go modules and it used standard mongodb driver to communicate to database and exposes services through google grpc and protobuf.
 
 Proto is defines in server/pawsgrpc/paws_grpc.proto as following:
+
 
 ```
 
@@ -52,7 +53,7 @@ For now there are only 2 simple calls (CreateDiary and FetchAllDiaries). In futu
 
 ### Database Access Layer:
 
-Database access logic is defined underserver/database folder. handler.go defines an interface and exposes database methods. mongo.go is mongodb implemetation if the interface. It simple implement data access methods to the pawsDB database.
+Database access logic is defined under server/database folder. handler.go defines an interface and exposes database methods. mongo.go is mongodb implemetation if the interface. It simple implement data access methods to the pawsDB database.
 
 excerpts from mongo.go:
 
@@ -126,7 +127,7 @@ func (srv *Runner) mapDiaries(diaries ...models.Diary) []*Diary {
  
 The rest of the server code is pretty straightforward. in main.go and runner.go we create config object and pass it grpc server and run the server.
 
-### Run the gRPC Backend server
+### Running the gRPC Backend server
 This runs the gRPC backend server, written in golang, and listens on port 9090.
 
 $ docker build -t paws/server \
@@ -161,5 +162,14 @@ In order to run application in development mode run the following commands in Pa
 - npm install
 - ng serve
 
-Then navigate to localhost:4200. Keep in mind that application won't act as a progressive web application in development mode.
+Then navigate to http://localhost:4200. Keep in mind that application won't act as a progressive web application in development mode.
 
+In order to run application in production mode simply execute httpserver (source located at PawsPWA/httpserver.go) or install node http_server inside Public folder.  
+
+PawsPWA/httpserver, can simply run by using following command in the PawsPWA folder:
+
+- npm run httpserver
+
+Then navigate to http://localhost:8081. 
+
+In addition to that a docker container has been included in the project and will be run automatically in docker-compose.
