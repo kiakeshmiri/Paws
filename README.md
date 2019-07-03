@@ -147,9 +147,19 @@ $docker-compose up
 
 If you decide to run the containers individually, you have to handle mongodb either on your machine or on a seperate container and handle networking yourself, docker-compose handles all of that for you.
 
-### Angular Client
+### Angular Web Application
 PawsPWA is a pretty simple angular application. It simply calls the gRPC services sending and receiving data on top http2 in binary format. protobuf handles data marshaling and gRPC handles data transfer on the network. Envoy proxy converts http1 calls to http2. Other proxy servers can be used as replacement of envoy but I just used envoy to be consistent with google gRPC web.
 
 PawsPWA is also using service worker. It means that it can be converted to a desktop or mobile app just like a MAGIC.
 
-Service worker will be acticated in production mode. It basically installs pawspwa application assets on client and adds logic for bacground sync. I have not used sync-manager feature and mannualy handle going offline and back online. The main reason is that I don't want to rely on sync-manager seature since it's not supported by all browsers yet.
+Service worker will be acticated in production mode. It basically installs pawspwa application assets on client and adds logic for bacground sync. I have not used sync-manager feature and mannualy handle going offline and back online. The main reason is to avoid relying on sync-manager feature since it's not supported by all browsers yet.
+
+PawsPWA stored data (diaries) in indexeddb abd fetches them back if device is offline so it generally will be available even if device is offline.
+
+In order to run application in development mode run the following commands in PawsPWA directory:
+
+- npm install
+- ng serve
+
+Then navigate to localhost:4200. Keep in mind that application won't act as a progressive web application in development mode.
+
