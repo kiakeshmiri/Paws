@@ -1,9 +1,10 @@
-package main
+package server
+
 import (
 	"fmt"
 
-	models "github.com/paws/server/model"
-	"github.com/paws/server/pawsgrpc"
+	models "github.com/kiakeshmiri/paws/server/model"
+	"github.com/kiakeshmiri/paws/server/pawsgrpc"	
 )
 
 // Runner ...

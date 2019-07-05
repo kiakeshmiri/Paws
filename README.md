@@ -62,7 +62,7 @@ import (
 	"errors"
 	"fmt"
 
-	models "github.com/paws/server/model"
+	models "github.com/kiakeshmiri/paws/server/model"
 	"gopkg.in/mgo.v2"
 )
 

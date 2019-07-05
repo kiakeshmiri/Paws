@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"log"
 	"net"
-	"github.com/paws/server/database"
-	models "github.com/paws/server/model"
+	"github.com/kiakeshmiri/paws/server/database"
+	models "github.com/kiakeshmiri/paws/server/model"
 	"google.golang.org/grpc"
 	"gopkg.in/mgo.v2/bson"
 )
