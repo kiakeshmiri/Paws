@@ -170,6 +170,6 @@ PawsPWA/httpserver, can simply run by using following command in the PawsPWA fol
 
 - npm run httpserver
 
-Then navigate to http://localhost:8081. 
+Then navigate to http://localhost:8180. 
 
 In addition to that a docker container has been included in the project and will be run automatically in docker-compose.

@@ -1,0 +1,13 @@
+server:
+    type: grpc
+    host: ''
+    port: 9090
+
+database:
+    type: mongo
+    host: pawsmongodb
+    port: 27017
+
+httpserver:
+    folder: /public
+    port: 9190    

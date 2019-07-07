@@ -1,7 +1,7 @@
 FROM golang:1.12.6-alpine AS build
 
 # Build args
-ENV PROJECT_SRC=/github.com/paws/server
+ENV PROJECT_SRC=/github.com/kiakeshmiri/paws/server
 
 # Install tools required to build the project
 # We will need to run `docker build --no-cache .` to update those dependencies
@@ -14,15 +14,6 @@ COPY ./server ${PROJECT_SRC}
 
 WORKDIR ${PROJECT_SRC}
 
-# RUN go mod init github.com/paws/server
+RUN go build -o grpcserver
 
-RUN go build 
-
-# Copy config file to output directory
-# COPY ./config.yml /project/
-
-# Move output directory from the previous build to the new one
-#COPY --from=build /project /project
-
-#WORKDIR /project
-ENTRYPOINT ["./server"]
+ENTRYPOINT ["./grpcserver"]

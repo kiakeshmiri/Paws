@@ -1,0 +1,3 @@
+httpserver:
+    folder: /public
+    port: 9190    

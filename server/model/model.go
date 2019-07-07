@@ -16,12 +16,16 @@ type Config struct {
 		Host string `env:"DB_HOST"`
 		Port uint   `env:"DB_PORT"`
 	}
+	Httpserver struct {
+		Folder string
+		Port   uint
+	}
 }
 
 // Diary ...
 type Diary struct {
-	ID    bson.ObjectId `json:"id" bson:"_id,omitempty"`
-	Image string        `json:"image"`
-	Note  string        `json:"note"`
-	DiaryDate  string   `json:"date"`
+	ID        bson.ObjectId `json:"id" bson:"_id,omitempty"`
+	Image     string        `json:"image"`
+	Note      string        `json:"note"`
+	DiaryDate string        `json:"date"`
 }

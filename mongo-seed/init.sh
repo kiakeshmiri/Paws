@@ -1,0 +1,1 @@
+mongoimport --db pawsDB --collection diary --type json --file ./init.json --jsonArray

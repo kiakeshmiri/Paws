@@ -12,11 +12,6 @@ services:
        - 27017:27017
     command: mongod --smallfiles --logpath=/var/log/mongodb/mongodb.log # --quiet
   
-  # mongo-seed:
-  #   build: ./mongo-seed
-  #   links:
-  #     - pawsmongodb
-
   pawsserver:
     container_name: "pawsserver"
     build:
@@ -29,6 +24,17 @@ services:
       - pawsmongodb
     depends_on:
       - pawsmongodb
+  
+  pawshttpserver:
+    container_name: "pawshttpserver"
+    build:
+      context: ./
+      dockerfile: ./httpserver/Dockerfile
+    image: pawshttpserver
+    volumes:
+      - ./public:/public
+    ports:
+      - "9190:9190"
   envoy:
     build:
       context: ./
