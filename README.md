@@ -127,25 +127,6 @@ func (srv *Runner) mapDiaries(diaries ...models.Diary) []*Diary {
  
 The rest of the server code is pretty straightforward. in main.go and runner.go we create config object and pass it grpc server and run the server.
 
-### Running the gRPC Backend server
-This runs the gRPC backend server, written in golang, and listens on port 9090.
-
-$ docker build -t paws/server \
-  -f paws/server/Dockerfile .
-$ docker run -d -p 9090:9090 --name pawsserver paws/server
-
-### Run the Envoy proxy
-This step runs the Envoy proxy, and listens on port 8080. Any gRPC-Web browser requests will be forwarded to port 9090.
-
-$ docker build -t paws/envoy \
-  -f paws/envoy/Dockerfile .
-$ docker run -d -p 8080:8080 --link pawsserver:pawsserver paws/envoy
-
-### Run all containers using docker compose
-It's recommended that skip invoking containers individually and use docker-compose unless you want to test each container individually. In that case please study docker-compose.yml first.
-
-$docker-compose up
-
 If you decide to run the containers individually, you have to handle mongodb either on your machine or on a seperate container and handle networking yourself, docker-compose handles all of that for you.
 
 ### Angular Web Application
@@ -164,12 +145,44 @@ In order to run application in development mode run the following commands in Pa
 
 Then navigate to http://localhost:4200. Keep in mind that application won't act as a progressive web application in development mode.
 
-In order to run application in production mode simply execute httpserver (source located at PawsPWA/httpserver.go) or install node http_server inside Public folder.  
+In order to run application in production mode simply compile and execute httpserver (source located at paws/httpserver/main.go) or install node http_server inside Public folder.  
 
 PawsPWA/httpserver, can simply run by using following command in the PawsPWA folder:
 
-- npm run httpserver
+```
+- cd paws/PawsPWA
+- npm run build
+- cd ../httpserver
+- go build
+- ./httpserver
+```
+It looks for public folder located at root which should have been generated through "npm run build".
 
-Then navigate to http://localhost:8180. 
+Now simply navigate to http://localhost:9190 and browse the application.
 
-In addition to that a docker container has been included in the project and will be run automatically in docker-compose.
+### Running the gRPC Backend server in docker
+This runs the gRPC backend server, written in golang, and listens on port 9090.
+
+$ docker build -t paws/server \
+  -f paws/server/Dockerfile .
+$ docker run -d -p 9090:9090 --name pawsserver paws/server
+
+### Run the Envoy proxy in docker
+This step runs the Envoy proxy, and listens on port 8080. Any gRPC-Web browser requests will be forwarded to port 9090.
+
+$ docker build -t paws/envoy \
+  -f paws/envoy/Dockerfile .
+$ docker run -d -p 8080:8080 --link pawsserver:pawsserver paws/envoy
+
+### Run the httpserver in docker
+This runs the http web server, written in golang, and listens on port 9190.
+
+$ docker build -t paws/httpserver \
+  -f paws/httpserver/Dockerfile .
+$ docker run -d -p 9190:9190
+
+### Run all containers using docker compose
+It's recommended that skip invoking containers individually and use docker-compose unless you want to test each container individually. In that case please study docker-compose.yml first.
+
+$docker-compose up
+
