@@ -167,21 +167,21 @@ $ docker build -t paws/server \
   -f paws/server/Dockerfile .
 $ docker run -d -p 9090:9090 --name pawsserver paws/server
 ```
-### Run the Envoy proxy in docker
+### Running the Envoy proxy in docker
 This step runs the Envoy proxy, and listens on port 8080. Any gRPC-Web browser requests will be forwarded to port 9090.
 ```
 $ docker build -t paws/envoy \
   -f paws/envoy/Dockerfile .
 $ docker run -d -p 8080:8080 --link pawsserver:pawsserver paws/envoy
 ```
-### Run the httpserver in docker
+### Running the httpserver in docker
 This runs the http web server, written in golang, and listens on port 9190.
 ```
 $ docker build -t paws/httpserver \
   -f paws/httpserver/Dockerfile .
 $ docker run -d -p 9190:9190
 ```
-### Run all containers using docker compose
+### Running all containers using docker compose
 It's recommended that skip invoking containers individually and use docker-compose unless you want to test each container individually. In that case please study docker-compose.yml first.
 ```
 $ docker-compose up
